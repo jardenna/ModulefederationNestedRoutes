@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const { ModuleFederationPlugin } = require('webpack').container;
-const deps = require('./package.json').dependencies;
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -9,6 +10,7 @@ const PrefixWrap = require('postcss-prefixwrap');
 const prodMode = process.env.NODE_ENV === 'production';
 const mode = 'development';
 const target = 'web';
+const deps = require('./package.json').dependencies;
 
 const plugins = [
   new CleanWebpackPlugin(),

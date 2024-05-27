@@ -4,8 +4,6 @@
 
 body {
   margin: 0;
-
-  // background-image: url('../images/frog.jpg');
   font-family: fonts.$font-primary;
 }
 
@@ -13,12 +11,4 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 30px;
-}
-
-input::placeholder {
-  color: red;
-}
-
-form {
-  width: 30px;
 }

@@ -14,7 +14,7 @@ const AppRouterHandler = () => {
     </Suspense>
   );
 };
-export const routes = [
+const routes = [
   {
     path: '/',
     element: <Layout />,
@@ -30,3 +30,5 @@ export const routes = [
     ],
   },
 ];
+
+export default routes;
