@@ -18,11 +18,11 @@ const routes = [
         element: <Contact />,
       },
       {
-        path: '/form',
+        path: 'form',
         element: <ContactForm />,
       },
       {
-        path: '/chat',
+        path: 'chat',
         element: <ContactChat />,
       },
     ],

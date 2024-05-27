@@ -105,5 +105,5 @@ module.exports = {
   globals: {
     JSX: true,
   },
-  ignorePatterns: ['build'],
+  ignorePatterns: ['dist'],
 };

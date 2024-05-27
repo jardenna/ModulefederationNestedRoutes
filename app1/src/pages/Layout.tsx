@@ -5,8 +5,8 @@ import { FC } from 'react';
 const Layout: FC = () => (
   <>
     <nav>
-      <NavLink to="/form">Contact form</NavLink>
-      <NavLink to="/chat">Contact Chat</NavLink>
+      <NavLink to="form">Contact form</NavLink>
+      <NavLink to="chat">Contact Chat</NavLink>
     </nav>
 
     <Outlet />
