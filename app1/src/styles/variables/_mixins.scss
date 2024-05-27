@@ -25,13 +25,13 @@
   border: solid transparent;
   border-width: $size;
 
-  @if $dir==down {
+  @if $dir == down {
     border-top-color: $color;
-  } @else if $dir==up {
+  } @else if $dir == up {
     border-bottom-color: $color;
-  } @else if $dir==left {
+  } @else if $dir == left {
     border-left-color: $color;
-  } @else if $dir==right {
+  } @else if $dir == right {
     border-right-color: $color;
   }
 }
@@ -45,18 +45,19 @@
   width: $size;
   height: $size;
   border: $weight solid $color;
+
   @include rotate(45deg);
 
-  @if $dir==up {
+  @if $dir == up {
     border-bottom: transparent;
     border-right: transparent;
-  } @else if $dir==down {
+  } @else if $dir == down {
     border-top: transparent;
     border-left: transparent;
-  } @else if $dir==right {
+  } @else if $dir == right {
     border-bottom: transparent;
     border-left: transparent;
-  } @else if $dir==left {
+  } @else if $dir == left {
     border-top: transparent;
     border-right: transparent;
   }

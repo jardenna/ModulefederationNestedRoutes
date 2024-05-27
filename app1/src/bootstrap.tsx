@@ -1,8 +1,8 @@
+import { RouterProvider } from 'react-router-dom';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { RouterProvider } from 'react-router-dom';
-import { createDynamicAppRouter } from './routing/createDynamicAppRouter';
 import { RoutingStrategy } from './routing/types';
+import { createDynamicAppRouter } from './routing/createDynamicAppRouter';
 
 const mount = ({
   mountPoint,
@@ -24,4 +24,5 @@ const mount = ({
   return () => queueMicrotask(() => root.unmount());
 };
 
+// eslint-disable-next-line import/prefer-default-export
 export { mount };
