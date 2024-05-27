@@ -9,9 +9,6 @@ const useSyncAppRouter = ({ basepath }: { basepath: string }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    window.dispatchEvent(
-      new CustomEvent('shell', { detail: location.pathname })
-    );
     const appNavigated = ({ detail }: RouteEvent) => {
       if (detail === location.pathname) {
         return;
