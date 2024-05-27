@@ -8,7 +8,7 @@ const RouteHandler = () => {
   useSyncGlobalRouter({ basename: '/contact' });
   return <Layout />;
 };
-export const routes = [
+const routes = [
   {
     path: '/',
     element: <RouteHandler />,
@@ -17,15 +17,16 @@ export const routes = [
         index: true,
         element: <Contact />,
       },
-
       {
-        path: 'form',
+        path: '/form',
         element: <ContactForm />,
       },
       {
-        path: 'chat',
+        path: '/chat',
         element: <ContactChat />,
       },
     ],
   },
 ];
+
+export default routes;

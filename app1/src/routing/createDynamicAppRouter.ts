@@ -1,6 +1,6 @@
 import { createHashRouter, createMemoryRouter } from 'react-router-dom';
 
-import { routes } from './routes';
+import routes from './routes';
 import { RoutingStrategy } from './types';
 
 interface createDynamicAppRouterProps {
@@ -8,7 +8,7 @@ interface createDynamicAppRouterProps {
   initialPathname?: string;
 }
 
-export function createDynamicAppRouter({
+function createDynamicAppRouter({
   routingStrategy,
   initialPathname,
 }: createDynamicAppRouterProps) {
@@ -21,3 +21,5 @@ export function createDynamicAppRouter({
 
   return createMemoryRouter(routes, { initialEntries });
 }
+
+export default createDynamicAppRouter;
