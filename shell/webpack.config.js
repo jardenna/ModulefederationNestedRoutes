@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
-const { ModuleFederationPlugin } = require('webpack').container;
+const { ModuleFederationPlugin } = require('@module-federation/enhanced');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -19,9 +19,7 @@ const plugins = [
   }),
   new ModuleFederationPlugin({
     name: 'shell',
-    remotes: {
-      app1: 'app1@http://localhost:4001/remoteEntry.js',
-    },
+
     shared: {
       ...deps,
       react: {
@@ -50,6 +48,7 @@ module.exports = {
     filename: prodMode ? '[name].[contenthash].js' : '[name].js',
     // this places all images processed in an image folder
     assetModuleFilename: 'images/[hash][ext][query]',
+    publicPath: 'auto',
   },
   devtool: 'source-map',
 
@@ -63,6 +62,12 @@ module.exports = {
     },
     static: {
       directory: path.join(__dirname, 'public'),
+    },
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers':
+        'X-Requested-With, content-type, Authorization',
     },
     compress: true,
     port: 4000,

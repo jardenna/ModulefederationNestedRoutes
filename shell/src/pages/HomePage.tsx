@@ -1,13 +1,8 @@
-import { FC, Suspense, lazy } from 'react';
+import { FC } from 'react';
 
-const App1Btn = lazy(() => import('app1/App1Btn'));
 const HomePage: FC = () => (
-    <div>
-      <h1>Home</h1>
-
-      <Suspense fallback="Loading App btn...">
-        <App1Btn />
-      </Suspense>
-    </div>
-  );
+  <div>
+    <h1>Home</h1>
+  </div>
+);
 export default HomePage;
