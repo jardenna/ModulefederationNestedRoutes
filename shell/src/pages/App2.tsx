@@ -1,15 +1,14 @@
 import { FC, useEffect, useRef } from 'react';
 
-import { mount } from 'app1/App1Index';
+import { mount } from 'app2/App2Index';
 import { useLocation } from 'react-router-dom';
 import { Path } from '../enums';
 
-const appBasename = `/${Path.app1Path}`;
+const appBasename = `/${Path.app2Path}`;
 
 const App1: FC = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-
   const isFirstRun = useRef(true);
 
   const remoteAppUnmountHandlerRef = useRef(() => {});
@@ -24,12 +23,11 @@ const App1: FC = () => {
       mountPoint: wrapperRef.current!,
       initialPathname: location.pathname.replace(appBasename, ''),
     });
-
     isFirstRun.current = false;
   }, [location]);
 
   useEffect(() => remoteAppUnmountHandlerRef.current, []);
 
-  return <div ref={wrapperRef} id="app1-mfe" />;
+  return <div ref={wrapperRef} id="app2-mfe" />;
 };
 export default App1;

@@ -1,17 +1,16 @@
 import { AppBaseName, Path } from '../enums';
 
 import useSyncGlobalRouter from '../hooks/useSyncGlobalRouter';
-import Contact from '../pages/Contact';
 import ContactChat from '../pages/ContactChat';
-import ContactForm from '../pages/ContactForm';
+import Info from '../pages/Info';
 import Layout from '../pages/Layout';
 
-const appBasename = `/${Path.app1Path}`;
+const appBasename = `/${Path.app2Path}`;
 
 const RouteHandler = () => {
   useSyncGlobalRouter({
     basename: appBasename,
-    eventName: AppBaseName.App1BaseName,
+    eventName: AppBaseName.App2BaseName,
   });
   return <Layout />;
 };
@@ -22,14 +21,14 @@ const routes = [
     children: [
       {
         index: true,
-        element: <Contact />,
+        element: <Info />,
       },
       {
-        path: 'form',
-        element: <ContactForm />,
+        path: '/info',
+        element: <Info />,
       },
       {
-        path: 'chat',
+        path: '/chat',
         element: <ContactChat />,
       },
     ],
