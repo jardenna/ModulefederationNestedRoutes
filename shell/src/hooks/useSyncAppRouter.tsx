@@ -4,7 +4,13 @@ import { useEffect } from 'react';
 
 type RouteEvent = CustomEvent<string>;
 
-const useSyncAppRouter = ({ basepath }: { basepath: string }) => {
+const useSyncAppRouter = ({
+  basepath,
+  eventName,
+}: {
+  basepath: string;
+  eventName: string;
+}) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -16,10 +22,10 @@ const useSyncAppRouter = ({ basepath }: { basepath: string }) => {
       navigate(detail);
     };
 
-    window.addEventListener('app', appNavigated as EventListener);
+    window.addEventListener(eventName, appNavigated as EventListener);
 
     return () => {
-      window.removeEventListener('app', appNavigated as EventListener);
+      window.removeEventListener(eventName, appNavigated as EventListener);
     };
   }, [location, navigate, basepath]);
 

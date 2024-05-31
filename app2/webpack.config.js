@@ -1,16 +1,15 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const { ModuleFederationPlugin } = require('webpack').container;
-
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const PrefixWrap = require('postcss-prefixwrap');
+const deps = require('./package.json').dependencies;
 
 const prodMode = process.env.NODE_ENV === 'production';
 const mode = 'development';
 const target = 'web';
-const deps = require('./package.json').dependencies;
 
 const plugins = [
   new CleanWebpackPlugin(),
@@ -18,10 +17,11 @@ const plugins = [
     filename: !prodMode ? '[name].css' : '[name].[contenthash].css',
   }),
   new ModuleFederationPlugin({
-    name: 'shell',
-    remotes: {
-      app1: 'app1@http://localhost:4001/remoteEntry.js',
-      app2: 'app2@http://localhost:4002/remoteEntry.js',
+    name: 'app2',
+    filename: 'remoteEntry.js',
+    exposes: {
+      './App2Index': './src/bootstrap',
+
     },
     shared: {
       ...deps,
@@ -66,7 +66,7 @@ module.exports = {
       directory: path.join(__dirname, 'public'),
     },
     compress: true,
-    port: 4000,
+    port: 4002,
   },
   mode,
   module: {
@@ -84,7 +84,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [PrefixWrap('.shell'), 'autoPrefixer'],
+                plugins: [PrefixWrap('.app1'), 'autoPrefixer'],
               },
             },
           },
@@ -98,13 +98,7 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
+
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         type: 'asset',
