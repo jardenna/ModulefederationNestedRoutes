@@ -9,7 +9,6 @@ const appBasename = `/${Path.app1Path}`;
 const App1: FC = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-
   const isFirstRun = useRef(true);
 
   const remoteAppUnmountHandlerRef = useRef(() => {});

@@ -20,5 +20,8 @@
     "isolatedModules": true,
     "jsx": "react-jsx"
   },
+  "paths": {
+    "*": ["./@mf-types/*"]
+  },
   "include": ["src"]
 }
