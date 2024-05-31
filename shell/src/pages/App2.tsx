@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef } from 'react';
 
-import { mount } from 'app2/App2Index';
+import { loadRemote } from '@module-federation/enhanced/runtime';
 import { useLocation } from 'react-router-dom';
 import { Path } from '../enums';
 
@@ -18,11 +18,14 @@ const App1: FC = () => {
       return;
     }
 
-    remoteAppUnmountHandlerRef.current = mount({
-      // Menupoint === where to mount the app depending on code is running if in remote or shell
-      mountPoint: wrapperRef.current!,
-      initialPathname: location.pathname.replace(appBasename, ''),
+    loadRemote('app2/App2Index').then((module: any) => {
+      remoteAppUnmountHandlerRef.current = module.mount({
+        // Menupoint === where to mount the app depending on code is running if in remote or shell
+        mountPoint: wrapperRef.current!,
+        initialPathname: location.pathname.replace(appBasename, ''),
+      });
     });
+
     isFirstRun.current = false;
   }, [location]);
 
