@@ -1,1 +1,4 @@
-@use 'global';
+@import 'variables/colors';
+@import 'variables/mixins';
+@import 'variables/fonts';
+@import 'main';

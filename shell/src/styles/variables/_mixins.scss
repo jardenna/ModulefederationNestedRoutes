@@ -114,3 +114,13 @@
 @mixin transition($what: all, $time: 0.5s, $how: ease-in-out) {
   transition: $what $time $how;
 }
+
+$html-font-size: 16px;
+
+@function stripUnit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@function rem($pxValue) {
+  @return #{calc(stripUnit($pxValue) / stripUnit($html-font-size))}rem;
+}
