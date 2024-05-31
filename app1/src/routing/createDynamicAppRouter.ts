@@ -1,7 +1,8 @@
 import { createHashRouter, createMemoryRouter } from 'react-router-dom';
 
+import { RoutingStrategyEnums } from '../enums';
+import { RoutingStrategy } from '../types';
 import routes from './routes';
-import { RoutingStrategy } from './types';
 
 interface createDynamicAppRouterProps {
   routingStrategy?: RoutingStrategy;
@@ -13,7 +14,7 @@ function createDynamicAppRouter({
   initialPathname,
 }: createDynamicAppRouterProps) {
   // If you run from local return createHashRouter else return createMemoryRouter
-  if (routingStrategy === 'browser') {
+  if (routingStrategy === RoutingStrategyEnums.Browser) {
     return createHashRouter(routes);
   }
 

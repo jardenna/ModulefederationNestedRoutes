@@ -5,3 +5,8 @@ export enum Path {
 export enum AppBaseName {
   App1BaseName = 'app1BaseName',
 }
+
+export enum RoutingStrategyEnums {
+  Browser = 'browser',
+  Memory = 'memory',
+}
