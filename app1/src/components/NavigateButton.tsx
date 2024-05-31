@@ -1,5 +1,8 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Path } from '../enums';
+
+const formPath = `${Path.app1Path}/form`;
 
 interface NavigateButtonProps {
   variant: 'sm' | 'lg';
