@@ -20,7 +20,6 @@ const plugins = [
   new ModuleFederationPlugin({
     name: 'shell',
     remotes: {
-      app1: 'app1@http://localhost:4001/remoteEntry.js',
       app2: 'app2@http://localhost:4002/remoteEntry.js',
     },
     shared: {

@@ -13,7 +13,7 @@ const NavigateButton: FC<NavigateButtonProps> = ({ variant }) => {
     <button
       type="button"
       className={`btn-${variant}`}
-      onClick={() => navigate('contact/form')}>
+      onClick={() => navigate(formPath)}>
       Click
     </button>
   );
