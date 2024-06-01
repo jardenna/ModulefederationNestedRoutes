@@ -43,10 +43,8 @@ module.exports = {
     app: './src/index.tsx',
   },
   output: {
-    // output path is required for `clean-webpack-plugin`
-    path: path.resolve(__dirname, 'public/assets'),
+    path: path.resolve(__dirname, 'dist'),
     filename: prodMode ? '[name].[contenthash].js' : '[name].js',
-
     publicPath: 'auto',
   },
   devtool: 'source-map',

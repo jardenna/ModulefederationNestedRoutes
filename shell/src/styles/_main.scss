@@ -5,11 +5,11 @@
 
 body {
   margin: 0;
-  font-size: rem(16);
+  font-size: rem(14px);
 }
 
 .container {
-  max-width: 1200px;
+  max-width: baseWith();
   margin: 0 auto;
   padding: 30px;
 }

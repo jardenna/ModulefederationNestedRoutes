@@ -45,11 +45,8 @@ module.exports = {
     app: './src/index.tsx',
   },
   output: {
-    // output path is required for `clean-webpack-plugin`
     path: path.resolve(__dirname, 'dist'),
     filename: prodMode ? '[name].[contenthash].js' : '[name].js',
-    // this places all images processed in an image folder
-    assetModuleFilename: 'images/[hash][ext][query]',
     publicPath: 'auto',
   },
   devtool: 'source-map',
@@ -98,10 +95,22 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset',
 
+        generator: {
+          filename: 'fonts/[name][ext]',
+          publicPath: 'assets/fonts/',
+        },
+      },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         type: 'asset',
+        generator: {
+          filename: 'fonts/[name][ext]',
+          publicPath: 'assets/images/',
+        },
       },
     ],
   },

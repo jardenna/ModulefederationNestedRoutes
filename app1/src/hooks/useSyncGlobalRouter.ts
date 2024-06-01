@@ -1,22 +1,18 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-
 import { useEffect } from 'react';
+import { AppBaseEventEnums, PathEnums } from '../enums';
 
 type RouteEvent = CustomEvent<string>;
 
-const useSyncGlobalRouter = ({
-  basename,
-  eventName,
-}: {
-  basename: string;
-  eventName: string;
-}) => {
+const useSyncGlobalRouter = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const newPath = `${basename}${location.pathname === '/' ? '' : location.pathname}`;
+  const newPath = `${PathEnums.app1Path}${location.pathname === '/' ? '' : location.pathname}`;
 
   useEffect(() => {
-    window.dispatchEvent(new CustomEvent(eventName, { detail: newPath }));
+    window.dispatchEvent(
+      new CustomEvent(AppBaseEventEnums.App1EventName, { detail: newPath })
+    );
     const shellNavigated = ({ detail }: RouteEvent) => {
       if (detail === location.pathname) {
         return;

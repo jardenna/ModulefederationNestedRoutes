@@ -1,9 +1,9 @@
-export enum Path {
+export enum PathEnums {
   app1Path = 'app1',
 }
 
-export enum AppBaseName {
-  App1BaseName = 'app1BaseName',
+export enum AppBaseEventEnums {
+  App1EventName = 'app1BaseName',
 }
 
 export enum RoutingStrategyEnums {

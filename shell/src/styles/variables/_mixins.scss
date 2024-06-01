@@ -115,12 +115,8 @@
   transition: $what $time $how;
 }
 
-$html-font-size: 16px;
+$base-font-size: 16px;
 
-@function stripUnit($value) {
-  @return $value / ($value * 0 + 1);
-}
-
-@function rem($pxValue) {
-  @return #{calc(stripUnit($pxValue) / stripUnit($html-font-size))}rem;
+@function rem($px-val) {
+  @return calc($px-val / $base-font-size) * 1rem;
 }
