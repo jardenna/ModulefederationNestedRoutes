@@ -1,15 +1,21 @@
 import { NavLink, Outlet } from 'react-router-dom';
-
 import { FC } from 'react';
+import { AppEventNameEnums, PathEnums } from '../enums';
 
-const Layout: FC = () => (
-  <>
-    <nav>
-      <NavLink to="form">Contact form</NavLink>
-      <NavLink to="chat">Contact Chat</NavLink>
-    </nav>
+import useSyncGlobalRouter from '../hooks/useSyncGlobalRouter';
 
-    <Outlet />
-  </>
-);
+const Layout: FC = () => {
+  const appBasename = `/${PathEnums.AppPath}`;
+  useSyncGlobalRouter(appBasename, AppEventNameEnums.AppEventName);
+  return (
+    <>
+      <nav>
+        <NavLink to="form">Contact form</NavLink>
+        <NavLink to="chat">Contact Chat</NavLink>
+      </nav>
+
+      <Outlet />
+    </>
+  );
+};
 export default Layout;
