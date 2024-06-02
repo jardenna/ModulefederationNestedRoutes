@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const { ModuleFederationPlugin } = require('@module-federation/enhanced');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -9,7 +8,6 @@ const deps = require('./package.json').dependencies;
 
 const prodMode = process.env.NODE_ENV === 'production';
 const mode = 'development';
-const target = 'web';
 
 const plugins = [
   new CleanWebpackPlugin(),
@@ -49,8 +47,6 @@ module.exports = {
     // output path is required for `clean-webpack-plugin`
     path: path.resolve(__dirname, 'dist'),
     filename: prodMode ? '[name].[contenthash].js' : '[name].js',
-    // this places all images processed in an image folder
-    assetModuleFilename: 'images/[hash][ext][query]',
     publicPath: 'auto',
   },
   devtool: 'source-map',
@@ -118,5 +114,4 @@ module.exports = {
   },
 
   plugins,
-  target,
 };
