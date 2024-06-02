@@ -1,4 +1,4 @@
-export enum Path {
+export enum PathEnums {
   app1Path = 'app1',
   app2Path = 'app2',
 }

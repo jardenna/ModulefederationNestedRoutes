@@ -2,9 +2,9 @@ import { FC, useEffect, useRef } from 'react';
 
 import { mount } from 'app2/App2Index';
 import { useLocation } from 'react-router-dom';
-import { Path } from '../enums';
+import { PathEnums } from '../enums';
 
-const appBasename = `/${Path.app2Path}`;
+const appBasename = `/${PathEnums.app2Path}`;
 
 const App1: FC = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
