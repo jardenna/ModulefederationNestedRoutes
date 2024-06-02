@@ -6,12 +6,12 @@ import { AppEventNameEnums } from '../enums';
 type RouteEvent = CustomEvent<string>;
 
 const useSyncGlobalRouter = (
-  basename: string,
+  basePath: string,
   eventName: AppEventNameEnums
 ) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const newPath = `${basename}${location.pathname === '/' ? '' : location.pathname}`;
+  const newPath = `${basePath}${location.pathname === '/' ? '' : location.pathname}`;
 
   useEffect(() => {
     window.dispatchEvent(new CustomEvent(eventName, { detail: newPath }));
@@ -23,13 +23,13 @@ const useSyncGlobalRouter = (
     };
 
     window.addEventListener(
-      AppEventNameEnums.shellEventName,
+      AppEventNameEnums.ShellEventName,
       shellNavigated as EventListener
     );
 
     return () => {
       window.removeEventListener(
-        AppEventNameEnums.shellEventName,
+        AppEventNameEnums.ShellEventName,
         shellNavigated as EventListener
       );
     };
