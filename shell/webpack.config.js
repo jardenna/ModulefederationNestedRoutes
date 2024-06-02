@@ -9,7 +9,6 @@ const PrefixWrap = require('postcss-prefixwrap');
 
 const prodMode = process.env.NODE_ENV === 'production';
 const mode = 'development';
-const target = 'web';
 const deps = require('./package.json').dependencies;
 
 const plugins = [
@@ -40,7 +39,7 @@ const plugins = [
 
 module.exports = {
   entry: {
-    app: './src/index.tsx',
+    app: './src/index',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -99,37 +98,27 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
+
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset',
-
+        type: 'asset/resource',
         generator: {
-          filename: 'fonts/[name][ext]',
-          publicPath: 'assets/fonts/',
+          filename: './fonts/[name][ext]',
         },
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        type: 'asset',
+        type: 'asset/resource',
         generator: {
-          filename: 'fonts/[name][ext]',
-          publicPath: 'assets/images/',
+          filename: './fonts/[name][ext]',
         },
       },
     ],
   },
 
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    extensions: ['.tsx', '.ts', '.jsx', '.js'],
   },
 
   plugins,
-  target,
 };

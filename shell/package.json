@@ -4,7 +4,9 @@
   "description": "",
   "main": "index",
   "scripts": {
+    "start:dev": "webpack serve --config webpack.dev.js",
     "start": "webpack serve",
+    "build:prod": "webpack --config webpack.prod.js",
     "build": "webpack",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "npm run lint -- --fix",
