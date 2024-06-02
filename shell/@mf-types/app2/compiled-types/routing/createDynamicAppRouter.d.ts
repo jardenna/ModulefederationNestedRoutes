@@ -1,4 +1,5 @@
 import { RoutingStrategy } from './types';
+
 interface createDynamicAppRouterProps {
     routingStrategy?: RoutingStrategy;
     initialPathname?: string;
