@@ -3,6 +3,6 @@ export enum PathEnums {
 }
 
 export enum AppEventNameEnums {
-  AppEventName = 'app2BaseName',
+  AppEventName = 'app2EventName',
   ShellEventName = 'shell',
 }

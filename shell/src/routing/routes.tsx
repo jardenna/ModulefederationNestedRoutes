@@ -14,7 +14,7 @@ const App1Lazy = lazy(() => import('../pages/App1'));
 const App2Lazy = lazy(() => import('../pages/App2'));
 
 const AppRouterHandler = () => {
-  useSyncAppRouter(Path.app1Path, AppEventNameEnums.App1BaseName);
+  useSyncAppRouter(Path.app1Path, AppEventNameEnums.App1EventName);
   return (
     <Suspense fallback="Loading App1...">
       <App1Lazy />
@@ -23,7 +23,7 @@ const AppRouterHandler = () => {
 };
 
 const App2RouterHandler = () => {
-  useSyncAppRouter(Path.app2Path, AppEventNameEnums.App2BaseName);
+  useSyncAppRouter(Path.app2Path, AppEventNameEnums.App2EventName);
   return (
     <Suspense fallback="Loading App2...">
       <App2Lazy />
