@@ -1,4 +1,4 @@
-import { AppBaseName, Path } from '../enums';
+import { AppEventNameEnums, PathEnums } from '../enums';
 
 import useSyncGlobalRouter from '../hooks/useSyncGlobalRouter';
 import Contact from '../pages/Contact';
@@ -6,13 +6,10 @@ import ContactChat from '../pages/ContactChat';
 import ContactForm from '../pages/ContactForm';
 import Layout from '../pages/Layout';
 
-const appBasename = `/${Path.app1Path}`;
+const appBasename = `/${PathEnums.AppPath}`;
 
 const RouteHandler = () => {
-  useSyncGlobalRouter({
-    basename: appBasename,
-    eventName: AppBaseName.App1BaseName,
-  });
+  useSyncGlobalRouter(appBasename, AppEventNameEnums.AppEventName);
   return <Layout />;
 };
 const routes = [

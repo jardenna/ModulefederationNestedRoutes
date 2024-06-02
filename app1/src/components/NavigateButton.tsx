@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Path } from '../enums';
+import { PathEnums } from '../enums';
 
-const formPath = `${Path.app1Path}/form`;
+const formPath = `${PathEnums.AppPath}/form`;
 
 const NavigateButton: FC = () => {
   const navigate = useNavigate();

@@ -1,17 +1,14 @@
-import { AppBaseName, Path } from '../enums';
+import { AppEventNameEnums, PathEnums } from '../enums';
 
 import useSyncGlobalRouter from '../hooks/useSyncGlobalRouter';
 import ContactChat from '../pages/ContactChat';
 import Info from '../pages/Info';
 import Layout from '../pages/Layout';
 
-const appBasename = `/${Path.app2Path}`;
+const appBasename = `/${PathEnums.AppPath}`;
 
 const RouteHandler = () => {
-  useSyncGlobalRouter({
-    basename: appBasename,
-    eventName: AppBaseName.App2BaseName,
-  });
+  useSyncGlobalRouter(appBasename, AppEventNameEnums.AppEventName);
   return <Layout />;
 };
 const routes = [
