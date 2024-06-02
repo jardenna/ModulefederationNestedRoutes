@@ -1,74 +1,17 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('path');
 const { ModuleFederationPlugin } = require('@module-federation/enhanced');
-
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const PrefixWrap = require('postcss-prefixwrap');
 
 const prodMode = process.env.NODE_ENV === 'production';
-const mode = 'development';
 const deps = require('./package.json').dependencies;
-
-const plugins = [
-  new CleanWebpackPlugin(),
-  new MiniCssExtractPlugin({
-    filename: !prodMode ? '[name].css' : '[name].[contenthash].css',
-  }),
-  new ModuleFederationPlugin({
-    name: 'shell',
-    remotes: {},
-    shared: {
-      ...deps,
-      react: {
-        singleton: true,
-        requiredVersion: deps.react,
-      },
-      'react-dom': {
-        singleton: true,
-        requiredVersion: deps['react-dom'],
-      },
-    },
-  }),
-  new HtmlWebpackPlugin({
-    template: './public/index.html',
-    favicon: './public/favicon.ico',
-  }),
-];
 
 module.exports = {
   entry: {
     app: './src/index',
   },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: prodMode ? '[name].[contenthash].js' : '[name].js',
-    publicPath: 'auto',
-  },
-  devtool: 'source-map',
-
-  devServer: {
-    hot: true,
-    client: {
-      overlay: {
-        errors: true,
-        warnings: false,
-      },
-    },
-    static: {
-      directory: path.join(__dirname, 'public'),
-    },
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
-      'Access-Control-Allow-Headers':
-        'X-Requested-With, content-type, Authorization',
-    },
-    compress: true,
-    port: 4000,
-  },
-  mode,
   module: {
     rules: [
       {
@@ -116,9 +59,32 @@ module.exports = {
     ],
   },
 
+  plugins: [
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: !prodMode ? '[name].css' : '[name].[contenthash].css',
+    }),
+    new ModuleFederationPlugin({
+      name: 'shell',
+      shared: {
+        ...deps,
+        react: {
+          singleton: true,
+          requiredVersion: deps.react,
+        },
+        'react-dom': {
+          singleton: true,
+          requiredVersion: deps['react-dom'],
+        },
+      },
+    }),
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      favicon: './public/favicon.ico',
+    }),
+  ],
+
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js'],
   },
-
-  plugins,
 };
