@@ -1,9 +1,10 @@
-export enum Path {
+export enum PathEnums {
   app1Path = 'app1',
   app2Path = 'app2',
 }
 
-export enum AppBaseName {
-  App1BaseName = 'app1BaseName',
-  App2BaseName = 'app2BaseName',
+export enum AppEventNameEnums {
+  App1EventName = 'app1EventName',
+  App2EventName = 'app2EventName',
+  ShellEventName = 'shell',
 }

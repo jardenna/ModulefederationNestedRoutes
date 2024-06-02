@@ -1,19 +1,17 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { useEffect } from 'react';
+import { AppEventNameEnums } from '../enums';
 
 type RouteEvent = CustomEvent<string>;
 
-const useSyncGlobalRouter = ({
-  basename,
-  eventName,
-}: {
-  basename: string;
-  eventName: string;
-}) => {
+const useSyncGlobalRouter = (
+  basePath: string,
+  eventName: AppEventNameEnums
+) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const newPath = `${basename}${location.pathname === '/' ? '' : location.pathname}`;
+  const newPath = `${basePath}${location.pathname === '/' ? '' : location.pathname}`;
 
   useEffect(() => {
     window.dispatchEvent(new CustomEvent(eventName, { detail: newPath }));
@@ -24,10 +22,16 @@ const useSyncGlobalRouter = ({
       navigate(detail);
     };
 
-    window.addEventListener('shell', shellNavigated as EventListener);
+    window.addEventListener(
+      AppEventNameEnums.ShellEventName,
+      shellNavigated as EventListener
+    );
 
     return () => {
-      window.removeEventListener('shell', shellNavigated as EventListener);
+      window.removeEventListener(
+        AppEventNameEnums.ShellEventName,
+        shellNavigated as EventListener
+      );
     };
   }, [location]);
 };

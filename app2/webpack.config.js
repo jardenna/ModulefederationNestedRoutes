@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
-const { ModuleFederationPlugin } = require('webpack').container;
+const { ModuleFederationPlugin } = require('@module-federation/enhanced');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -21,7 +21,6 @@ const plugins = [
     filename: 'remoteEntry.js',
     exposes: {
       './App2Index': './src/bootstrap',
-
     },
     shared: {
       ...deps,
@@ -51,6 +50,7 @@ module.exports = {
     filename: prodMode ? '[name].[contenthash].js' : '[name].js',
     // this places all images processed in an image folder
     assetModuleFilename: 'images/[hash][ext][query]',
+    publicPath: 'auto',
   },
   devtool: 'source-map',
 
@@ -64,6 +64,12 @@ module.exports = {
     },
     static: {
       directory: path.join(__dirname, 'public'),
+    },
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers':
+        'X-Requested-With, content-type, Authorization',
     },
     compress: true,
     port: 4002,

@@ -1,16 +1,11 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { useEffect } from 'react';
+import { AppEventNameEnums } from '../enums';
 
 type RouteEvent = CustomEvent<string>;
 
-const useSyncAppRouter = ({
-  basepath,
-  eventName,
-}: {
-  basepath: string;
-  eventName: string;
-}) => {
+const useSyncAppRouter = (basepath: string, eventName: AppEventNameEnums) => {
   const location = useLocation();
   const navigate = useNavigate();
 
