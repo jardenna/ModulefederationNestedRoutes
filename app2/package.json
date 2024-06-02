@@ -4,8 +4,8 @@
   "description": "",
   "main": "index",
   "scripts": {
-    "start": "webpack serve",
-    "build": "webpack",
+    "build": "webpack --progress --config webpack.prod.js",
+    "start": "webpack serve --config webpack.dev.js",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "npm run lint -- --fix",
     "stylelint": "npx stylelint \"**/*.scss\"",

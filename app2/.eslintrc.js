@@ -29,6 +29,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/no-duplicate-enum-values': 'warn',
     '@typescript-eslint/no-empty-interface': 'warn',
+    '@typescript-eslint/no-var-requires': 'off',
     'import/no-extraneous-dependencies': [
       'error',
       {
@@ -73,7 +74,6 @@ module.exports = {
     'react/no-direct-mutation-state': 1,
     'no-nested-ternary': 'warn',
     'no-prototype-builtins': 'off',
-    // TODO Remove this after any fixes
     '@typescript-eslint/no-explicit-any': 'off',
     'react/sort-comp': 'off',
     'no-shadow': 'off',
