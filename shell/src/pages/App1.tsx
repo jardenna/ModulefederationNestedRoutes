@@ -1,5 +1,4 @@
 import { FC, useEffect, useRef } from 'react';
-
 import { loadRemote } from '@module-federation/enhanced/runtime';
 import { useLocation } from 'react-router-dom';
 import { PathEnums } from '../enums';

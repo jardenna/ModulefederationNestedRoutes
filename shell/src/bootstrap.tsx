@@ -1,5 +1,5 @@
-import { init } from '@module-federation/enhanced/runtime';
 import { createRoot } from 'react-dom/client';
+import { init } from '@module-federation/enhanced/runtime';
 import App from './App';
 
 init({

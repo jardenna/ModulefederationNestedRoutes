@@ -9,6 +9,7 @@ module.exports = {
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
+    'plugin:import/recommended',
   ],
   reportUnusedDisableDirectives: true,
   parser: '@typescript-eslint/parser',
@@ -19,8 +20,27 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'typescript-sort-keys'],
+  plugins: ['react', '@typescript-eslint', 'typescript-sort-keys', 'import'],
   rules: {
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal'],
+        pathGroups: [
+          {
+            pattern: '{react,react-dom/**}',
+            group: 'external',
+            position: 'before',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['react'],
+        'newlines-between': 'never',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
     'typescript-sort-keys/string-enum': [
       'warn',
       'asc',
@@ -30,6 +50,7 @@ module.exports = {
     '@typescript-eslint/no-duplicate-enum-values': 'warn',
     '@typescript-eslint/no-empty-interface': 'warn',
     '@typescript-eslint/no-var-requires': 'off',
+
     'import/no-extraneous-dependencies': [
       'error',
       {

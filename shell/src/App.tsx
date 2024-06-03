@@ -1,7 +1,6 @@
 import './styles/index.scss';
 
 import { RouterProvider, createHashRouter } from 'react-router-dom';
-
 import routes from './routing/routes';
 
 const browserRouter = createHashRouter(routes);

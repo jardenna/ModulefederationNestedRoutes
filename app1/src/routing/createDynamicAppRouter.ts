@@ -1,5 +1,4 @@
 import { createHashRouter, createMemoryRouter } from 'react-router-dom';
-
 import routes from './routes';
 import { RoutingStrategy } from './types';
 

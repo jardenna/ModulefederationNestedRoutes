@@ -1,7 +1,6 @@
-import { NavLink, Outlet } from 'react-router-dom';
 import { FC } from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
 import { AppEventNameEnums, PathEnums } from '../enums';
-
 import useSyncGlobalRouter from '../hooks/useSyncGlobalRouter';
 
 const Layout: FC = () => {

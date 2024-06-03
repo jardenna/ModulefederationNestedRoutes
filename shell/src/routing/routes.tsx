@@ -1,7 +1,6 @@
 import { lazy } from 'react';
-import { AppEventNameEnums, PathEnums } from '../enums';
-
 import PageNavigationHandler from '../components/PageNavigationHandler';
+import { AppEventNameEnums, PathEnums } from '../enums';
 import HomePage from '../pages/HomePage';
 import Layout from '../pages/Layout';
 

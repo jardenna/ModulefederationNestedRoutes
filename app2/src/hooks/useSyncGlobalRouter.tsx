@@ -1,6 +1,5 @@
-import { useLocation, useNavigate } from 'react-router-dom';
-
 import { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AppEventNameEnums } from '../enums';
 
 type RouteEvent = CustomEvent<string>;

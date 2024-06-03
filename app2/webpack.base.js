@@ -1,9 +1,9 @@
+/* eslint-disable import/newline-after-import */
 const { ModuleFederationPlugin } = require('@module-federation/enhanced');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PrefixWrap = require('postcss-prefixwrap');
-
 const prodMode = process.env.NODE_ENV === 'production';
 const deps = require('./package.json').dependencies;
 

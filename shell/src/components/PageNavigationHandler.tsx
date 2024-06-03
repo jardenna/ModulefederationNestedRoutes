@@ -1,7 +1,6 @@
 import { FC, ReactNode, Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { AppEventNameEnums, PathEnums } from '../enums';
-
 import useSyncAppRouter from '../hooks/useSyncAppRouter';
 
 interface NavigationManagerProps {

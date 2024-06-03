@@ -1,8 +1,8 @@
 const path = require('path');
-const { merge } = require('webpack-merge');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
+const { merge } = require('webpack-merge');
 const webpackBaseConfig = require('./webpack.base');
 
 module.exports = merge(webpackBaseConfig, {
