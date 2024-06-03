@@ -17,7 +17,9 @@ const PageNavigationHandler: FC<NavigationManagerProps> = ({
   useSyncAppRouter(appPath, appEventName);
   return (
     <ErrorBoundary fallback={<div>Something went wrong</div>}>
-      <Suspense fallback={<span className="loader" />}>{children}</Suspense>
+      <Suspense fallback={<span className="loader">Loading...</span>}>
+        {children}
+      </Suspense>
     </ErrorBoundary>
   );
 };
