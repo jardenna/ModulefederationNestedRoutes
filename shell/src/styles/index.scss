@@ -1,2 +1,7 @@
-@use 'global';
+@import 'variables/functions';
+@import 'variables/mixins';
+@import 'variables/mq-sizes';
+@import 'variables/colors';
+@import 'variables/fonts';
 @import 'loader';
+@import 'main';

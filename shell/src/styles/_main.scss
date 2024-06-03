@@ -1,13 +1,11 @@
-@use 'variables/colors';
-@use 'variables/fonts';
-
 * {
-  font-family: fonts.$font-primary;
+  font-family: $font-primary;
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  font-size: rem(12px);
 }
 
 .container {
