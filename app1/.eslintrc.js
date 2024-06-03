@@ -29,6 +29,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/no-duplicate-enum-values': 'warn',
     '@typescript-eslint/no-empty-interface': 'warn',
+    '@typescript-eslint/no-var-requires': 'off',
     'import/no-extraneous-dependencies': [
       'error',
       {
