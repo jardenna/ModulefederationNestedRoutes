@@ -6,10 +6,10 @@ const Nav: FC = () => (
   <nav>
     <ul className="nav">
       <li>
-        <NavLink to={PathEnums.app1Path}>App1</NavLink>
+        <NavLink to={PathEnums.App1Path}>App1</NavLink>
       </li>
       <li>
-        <NavLink to={PathEnums.app2Path}>App2</NavLink>
+        <NavLink to={PathEnums.App2Path}>App2</NavLink>
       </li>
     </ul>
   </nav>

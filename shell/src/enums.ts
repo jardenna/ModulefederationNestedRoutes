@@ -1,6 +1,6 @@
 export enum PathEnums {
-  app1Path = 'app1',
-  app2Path = 'app2',
+  App1Path = 'app1',
+  App2Path = 'app2',
 }
 
 export enum AppEventNameEnums {

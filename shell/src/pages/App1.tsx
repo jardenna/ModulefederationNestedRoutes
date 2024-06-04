@@ -3,7 +3,7 @@ import { loadRemote } from '@module-federation/enhanced/runtime';
 import { useLocation } from 'react-router-dom';
 import { PathEnums } from '../enums';
 
-const appBasename = `/${PathEnums.app1Path}`;
+const appBasename = `/${PathEnums.App1Path}`;
 
 const App1: FC = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
