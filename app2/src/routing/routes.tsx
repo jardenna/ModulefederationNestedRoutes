@@ -1,6 +1,8 @@
-import ContactChat from '../pages/ContactChat';
+import { SubPathEnums } from '../enums';
+import About from '../pages/About';
 import Info from '../pages/Info';
 import Layout from '../pages/Layout';
+import Profile from '../pages/Profile';
 
 const routes = [
   {
@@ -9,15 +11,15 @@ const routes = [
     children: [
       {
         index: true,
+        element: <Profile />,
+      },
+      {
+        path: SubPathEnums.Info,
         element: <Info />,
       },
       {
-        path: '/info',
-        element: <Info />,
-      },
-      {
-        path: '/chat',
-        element: <ContactChat />,
+        path: SubPathEnums.About,
+        element: <About />,
       },
     ],
   },

@@ -1,10 +1,8 @@
 import { FC } from 'react';
-import { NavLink } from 'react-router-dom';
 
 const ContactForm: FC = () => (
   <div>
-    <h1>Contact form</h1>
-    <NavLink to="/">return to app1 </NavLink>
+    <h1>Contact form from App1</h1>
   </div>
 );
 export default ContactForm;

@@ -3,7 +3,8 @@ export enum PathEnums {
 }
 
 export enum SubPathEnums {
-  AppPath = 'app2',
+  About = '/form',
+  Info = '/chat',
 }
 
 export enum AppEventNameEnums {

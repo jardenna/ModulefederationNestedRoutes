@@ -8,10 +8,10 @@ const Layout: FC = () => {
   const appBasename = `/${PathEnums.AppPath}`;
   useSyncGlobalRouter(appBasename, AppEventNameEnums.AppEventName);
   return (
-    <section className="app2">
+    <article>
       <Nav />
       <Outlet />
-    </section>
+    </article>
   );
 };
 export default Layout;

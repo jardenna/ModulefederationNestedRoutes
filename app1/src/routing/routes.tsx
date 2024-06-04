@@ -1,3 +1,4 @@
+import { SubPathEnums } from '../enums';
 import Contact from '../pages/Contact';
 import ContactChat from '../pages/ContactChat';
 import ContactForm from '../pages/ContactForm';
@@ -13,11 +14,11 @@ const routes = [
         element: <Contact />,
       },
       {
-        path: 'form',
+        path: SubPathEnums.Form,
         element: <ContactForm />,
       },
       {
-        path: 'chat',
+        path: SubPathEnums.Chat,
         element: <ContactChat />,
       },
     ],

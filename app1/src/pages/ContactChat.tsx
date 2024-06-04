@@ -1,10 +1,8 @@
 import { FC } from 'react';
-import { NavLink } from 'react-router-dom';
 
 const ContactChat: FC = () => (
   <div>
-    <h1>Contact Chat</h1>
-    <NavLink to="/">return to app1 </NavLink>
+    <h1>Contact Chat from App1</h1>
   </div>
 );
 export default ContactChat;
