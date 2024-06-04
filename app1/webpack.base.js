@@ -18,7 +18,6 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            // This is required for asset imports in CSS, such as url()
             options: { publicPath: '' },
           },
           'css-loader',
@@ -30,8 +29,6 @@ module.exports = {
               },
             },
           },
-          // according to the docs, sass-loader should be at the bottom, which
-          // loads it first to avoid prefixes in your sourcemaps and other issues.
           'sass-loader',
         ],
       },
@@ -68,7 +65,6 @@ module.exports = {
       filename: 'remoteEntry.js',
       exposes: {
         './App1Index': './src/bootstrap',
-        './App1Btn': './src/components/NavigateButton',
       },
       shared: {
         ...deps,
