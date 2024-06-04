@@ -23,4 +23,5 @@ const PageNavigationHandler: FC<NavigationManagerProps> = ({
     </ErrorBoundary>
   );
 };
+
 export default PageNavigationHandler;

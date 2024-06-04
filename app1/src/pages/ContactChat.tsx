@@ -5,4 +5,5 @@ const ContactChat: FC = () => (
     <h1>Contact Chat from App1</h1>
   </div>
 );
+
 export default ContactChat;

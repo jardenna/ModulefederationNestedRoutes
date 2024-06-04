@@ -8,4 +8,5 @@ const Nav: FC = () => (
     <NavLink to={SubPathEnums.About}>About</NavLink>
   </nav>
 );
+
 export default Nav;

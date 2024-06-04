@@ -8,4 +8,5 @@ const Nav: FC = () => (
     <NavLink to={SubPathEnums.Chat}>Contact Chat</NavLink>
   </nav>
 );
+
 export default Nav;

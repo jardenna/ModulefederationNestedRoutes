@@ -5,4 +5,5 @@ const Profile: FC = () => (
     <h1>Profile from app2</h1>
   </section>
 );
+
 export default Profile;

@@ -5,4 +5,5 @@ const About: FC = () => (
     <h1>About us from App2</h1>
   </section>
 );
+
 export default About;

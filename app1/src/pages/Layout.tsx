@@ -14,4 +14,5 @@ const Layout: FC = () => {
     </article>
   );
 };
+
 export default Layout;

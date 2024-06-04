@@ -5,4 +5,5 @@ const ContactForm: FC = () => (
     <h1>Contact form from App1</h1>
   </div>
 );
+
 export default ContactForm;

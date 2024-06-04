@@ -32,4 +32,5 @@ const App1: FC = () => {
 
   return <div ref={wrapperRef} id="app2-mfe" />;
 };
+
 export default App1;
