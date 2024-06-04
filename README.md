@@ -8,10 +8,6 @@ This example shows how to handle independent and nested routings in a MFE V 2 se
 
 <br>
 
-# Change names for app1 and app2
-
-<br>
-
 # Running Demo
 
 app1 cd app1 run npm i and the npm start
