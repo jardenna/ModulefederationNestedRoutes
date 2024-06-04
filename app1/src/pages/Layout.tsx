@@ -10,7 +10,9 @@ const Layout: FC = () => {
   return (
     <article>
       <Nav />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
     </article>
   );
 };
