@@ -1,21 +1,25 @@
 # Module Federation - React Router DOM Example
 
-This example shows how to handle independent and nested routings in a MFE setup based on [webpack-module-federation](https://module-federation.io/). The setup consists of:
+This example shows how to handle independent and nested routings in a MFE V 2 setup based on [webpack-module-federation](https://module-federation.io/). The setup consists of:
 
-- `app1` & `app2`: apps using a browser history strategy when acting as hosts and an in-memory history strategy when acting as remotes.
-- `shell`: host app based on a browser history strategy that handles high-level routing. Shell routing determines mounting/unmounting of `app1` and `app2` remotes.
+- `shell` is the host application and loads `app1` and `app2` at runtime, and is the only component responsible for updating browser url. The two level of history strategies (browser + in-memory) are kept in sync through an event-based communication between shell and remotes.
+- `app2` is a standalone application .
+- `app3` is a standalone application that exposes `Button` component.
 
-The shell is the only component responsible for updating browser url. The two level of history strategies (browser + in-memory) are kept in sync through an event-based communication between shell and remotes.
+<br>
+
+# Change names for app1 and app2
 
 <br>
 
 # Running Demo
 
-2. Install deps by running `npm install`. Since the repo is based on [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces) the command will install deps for all MFEs.
-3. Start apps by running `npm start`.
+app1 cd app1 run npm i and the npm start
+app2 cd app run npm i and the npm start
+shell cd app run npm i and the npm start
 
 <br>
 
 # Credits
 
-The setup is inspired to https://github.com/StephenGrider/mfe.
+Inspired to https://github.com/RussellCanfield.
