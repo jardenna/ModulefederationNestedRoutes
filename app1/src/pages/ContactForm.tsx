@@ -1,9 +1,9 @@
 import { FC } from 'react';
 
 const ContactForm: FC = () => (
-  <div>
+  <section>
     <h1>Contact form from App1</h1>
-  </div>
+  </section>
 );
 
 export default ContactForm;

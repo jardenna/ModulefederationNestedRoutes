@@ -1,15 +1,15 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
-import { SubPathEnums } from '../enums';
+import { PathEnums } from '../enums';
 
 const Nav: FC = () => (
   <nav>
-    <ul>
+    <ul className="nav">
       <li>
-        <NavLink to={SubPathEnums.Info}>Info</NavLink>
+        <NavLink to={PathEnums.app1Path}>App1</NavLink>
       </li>
       <li>
-        <NavLink to={SubPathEnums.About}>About</NavLink>
+        <NavLink to={PathEnums.app2Path}>App2</NavLink>
       </li>
     </ul>
   </nav>

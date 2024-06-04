@@ -1,8 +1,8 @@
 import { lazy } from 'react';
 import PageNavigationHandler from '../components/PageNavigationHandler';
 import { AppEventNameEnums, PathEnums } from '../enums';
+import Layout from '../layout/Layout';
 import HomePage from '../pages/HomePage';
-import Layout from '../pages/Layout';
 
 const app1Basepath = `/${PathEnums.app1Path}/*`;
 const app2Basepath = `/${PathEnums.app2Path}/*`;

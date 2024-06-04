@@ -4,8 +4,14 @@ import { SubPathEnums } from '../enums';
 
 const Nav: FC = () => (
   <nav>
-    <NavLink to={SubPathEnums.Form}>Contact form</NavLink>
-    <NavLink to={SubPathEnums.Chat}>Contact Chat</NavLink>
+    <ul>
+      <li>
+        <NavLink to={SubPathEnums.Form}>Contact form</NavLink>
+      </li>
+      <li>
+        <NavLink to={SubPathEnums.Chat}>Contact Chat</NavLink>
+      </li>
+    </ul>
   </nav>
 );
 

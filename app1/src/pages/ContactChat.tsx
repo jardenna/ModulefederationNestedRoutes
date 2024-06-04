@@ -1,9 +1,9 @@
 import { FC } from 'react';
 
 const ContactChat: FC = () => (
-  <div>
+  <section>
     <h1>Contact Chat from App1</h1>
-  </div>
+  </section>
 );
 
 export default ContactChat;

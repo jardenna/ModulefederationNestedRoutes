@@ -5,11 +5,10 @@
 
 body {
   margin: 0;
-  font-size: rem(14px);
+  font-size: rem(16px);
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 30px;
+h1 {
+  font-size: rem(20px);
+  font-weight: 100;
 }
