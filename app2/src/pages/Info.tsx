@@ -5,5 +5,4 @@ const Info: FC = () => (
     <h1>Info from app2</h1>
   </section>
 );
-
 export default Info;
