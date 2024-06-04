@@ -1,9 +1,9 @@
 import { createHashRouter, createMemoryRouter } from 'react-router-dom';
 import routes from './routes';
-import { RoutingStrategy } from './types';
+import { RoutingStrategyTypes } from './types';
 
 interface createDynamicAppRouterProps {
-  routingStrategy?: RoutingStrategy;
+  routingStrategy?: RoutingStrategyTypes;
   initialPathname?: string;
 }
 

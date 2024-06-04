@@ -1,1 +1,1 @@
-export type RoutingStrategy = 'memory' | 'browser';
+export type RoutingStrategyTypes = 'memory' | 'browser';

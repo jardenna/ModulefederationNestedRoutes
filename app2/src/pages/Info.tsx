@@ -1,11 +1,9 @@
 import { FC } from 'react';
-import { NavLink } from 'react-router-dom';
 
 const Info: FC = () => (
-  <div>
+  <section>
     <h1>Info from app2</h1>
-    <NavLink to="/">Return to home</NavLink>
-  </div>
+  </section>
 );
 
 export default Info;

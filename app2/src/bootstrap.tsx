@@ -4,7 +4,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import createDynamicAppRouter from './routing/createDynamicAppRouter';
-import { RoutingStrategy } from './routing/types';
+import { RoutingStrategyTypes } from './routing/types';
 
 const mount = ({
   mountPoint,
@@ -13,7 +13,7 @@ const mount = ({
 }: {
   mountPoint: HTMLElement;
   initialPathname?: string;
-  routingStrategy?: RoutingStrategy;
+  routingStrategy?: RoutingStrategyTypes;
 }) => {
   const router = createDynamicAppRouter({ routingStrategy, initialPathname });
   const root = createRoot(mountPoint);

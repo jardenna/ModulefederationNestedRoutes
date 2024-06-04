@@ -1,5 +1,5 @@
 {
   "prettier.configPath": ".prettierrc",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "stylelint.validate": ["css", "scss"]
 }
