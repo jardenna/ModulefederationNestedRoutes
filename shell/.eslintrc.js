@@ -80,10 +80,10 @@ module.exports = {
       { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
     'no-console': ['warn', { allow: ['warn'] }],
-    // 'no-warning-comments': [
-    //   'error',
-    //   { terms: ['todo', 'fixme', 'any other term'], location: 'anywhere' },
-    // ],
+    'no-warning-comments': [
+      'error',
+      { terms: ['todo', 'fixme', 'any other term'], location: 'anywhere' },
+    ],
     camelcase: 'off',
     'react/destructuring-assignment': 'off',
     'react/prefer-stateless-function': 'warn',
@@ -95,8 +95,6 @@ module.exports = {
     'react/no-direct-mutation-state': 1,
     'no-nested-ternary': 'warn',
     'no-prototype-builtins': 'off',
-    // TODO Remove this after any fixes
-    '@typescript-eslint/no-explicit-any': 'off',
     'react/sort-comp': 'off',
     'no-shadow': 'off',
     'react/require-default-props': [
